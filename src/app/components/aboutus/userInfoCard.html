@@ -1,0 +1,8 @@
+Name:{{vm.user.name}}</br>
+<div ng-show='!!vm.user.address'>
+    Address :</br> {{vm.user.address.street}}</br>
+    {{vm.user.address.city}}</br>
+    {{vm.user.address.planet}}</div>
+<div>Friends :
+    <div ng-repeat='friend in vm.user.friends'>{{friend}}</div>
+</div>
