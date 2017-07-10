@@ -1,8 +1,17 @@
-Name:{{vm.user.name}}</br>
-<div ng-show='!!vm.user.address'>
-    Address :</br> {{vm.user.address.street}}</br>
-    {{vm.user.address.city}}</br>
-    {{vm.user.address.planet}}</div>
-<div>Friends :
-    <div ng-repeat='friend in vm.user.friends'>{{friend}}</div>
+<div class="panel panel-primary">
+    <div class="panel-heading" ng-click="vm.collapse()">{{vm.user.name}}</div>
+    <div class="panel-body" ng-hide="vm.collapsed">
+        <div ng-show='!!vm.user.address && !collapsed' ng-click="collapseAddress()">
+            <h4>Address :</h4> {{vm.user.address.street}}</br>
+            {{vm.user.address.city}}</br>
+            {{vm.user.address.planet}}
+        </div>
+
+        <h4>Friends :</h4>
+        <ul>
+            <li ng-repeat='friend in vm.user.friends'>{{friend}}</li>
+        </ul>
+        <div ng-show="!! vm.user.rank">Rank :{{vm.user.rank}}</div>
+        <button ng-show="!vm.user.rank" class="btn btn-success" ng-click="knightMe(vm.user)">Knight Me</button>
+    </div>
 </div>
